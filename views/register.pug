@@ -1,0 +1,18 @@
+html
+    head
+        title Register
+body
+
+    div
+        a(href = "/") Home  
+        a(href = "/users") Users
+        a(href = "/login", style = "float: right;") Login  
+        br
+        br
+        h2 Register:
+        p Username: 
+            input#username(type = "textbox")
+        p Password: 
+            input#password(type = "textbox") 
+        button#submit(type="button", onclick = "submit()") Submit
+        script(type = "text/javascript", src = "./client.js")

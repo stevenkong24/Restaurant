@@ -1,0 +1,19 @@
+html
+    head
+        title Restaurants
+body
+
+    div        
+        a(href = "/") Home  
+        a(href = "/users") Users  
+        each s in session
+            if !s.loggedIn
+                a(href = "/login", style = "float: right;") Login  
+                br
+                a(href = "/register", style = "float: right;") Register  
+            else
+                a(href = "/order") Order  
+                a(href = "/logout", style = "float: right;") Log Out
+                p(style = "text-align: right;") Logged in as #{s.user} 
+        
+        h1 Welcome to Our Online Food Service

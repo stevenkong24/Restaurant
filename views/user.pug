@@ -1,0 +1,35 @@
+html
+    head
+        title Restaurants
+body
+
+    div        
+        a(href = "/") Home  
+        a(href = "/users") Users 
+        each s in session
+            if !s.loggedIn
+                a(href = "/login", style = "float: right;") Login  
+                br
+                a(href = "/register", style = "float: right;") Register  
+            else
+                a(href = "/order") Order  
+                a(href = "/logout", style = "float: right;") Log Out
+                p(style = "text-align: right;") Logged in as #{s.user}
+        br
+        
+        each s in session
+            if user.privacy == true
+                if user.username == s.user
+                    h2 Profile
+                    h3#username #{user.username}
+                    p Privacy: 
+                        input#privacy(type = "checkbox", checked = "checked") 
+                    button#submit(type="button", onclick = "save()") Save
+            else
+                h2 Profile
+                h3#username #{user.username}
+                if user.username == s.user
+                    p Privacy: 
+                        input#privacy(type = "checkbox") 
+                    button#submit(type="button", onclick = "save()") Save
+        script(type = "text/javascript", src = "../client.js")
