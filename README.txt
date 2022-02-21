@@ -1,4 +1,4 @@
-Assignment 4
+Restaurant
 
 Program Author: Steven Kong
 
